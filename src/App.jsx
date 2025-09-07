@@ -1,4 +1,3 @@
-import styles from "./App.module.css";
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
@@ -11,9 +10,8 @@ import Home from "./components/Home/Home";
 
 function App() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-black width-full h-screen">
       <Navbar />
-      <Home />
       {/* <Hero />
       <About />
       <Experience />

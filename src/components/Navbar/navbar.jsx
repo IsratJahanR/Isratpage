@@ -1,24 +1,53 @@
-import React from 'react';
-
+import React, { useState } from "react";
+import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
 const Navbar = () => {
+  const [menu, openMenu] = useState(false);
+  const [showMenu, setShowmenu] = useState(true);
   return (
-    <nav className="fixed top-0 left-0 w-full bg-cust text-green-900 shadow-md py-4 z-50">
-        <div className="container mx-auto flex justify-between items-center px-6">
-            <a href="#home" className="flex items-center space-x-2">
-                <img src="/assets/images/icon.jpg" alt="Logo" className="h-12 w-12 rounded-full" />
-            </a>
-            <ul className="flex space-x-6">
-                <li><a href="#home" className="hover:text-green-500">Home</a></li>
-                <li><a href="#about" className="hover:text-green-500">About</a></li>
-                <li><a href="#education" className="hover:text-green-500">Education</a></li>
-                <li><a href="#skills" className="hover:text-green-500">Skills</a></li>
-                <li><a href="#projects" className="hover:text-green-500">Projects</a></li>
-                <li><a href="#research" className="hover:text-green-500">Research</a></li>
-                <li><a href="#problem-solving" className="hover:text-green-500">Problem Solving</a></li>
-                <li><a href="#blogs" className="hover:text-green-500">Blogs</a></li>
-                <li><a href="#contact" className="hover:text-green-500">Contact</a></li>
-            </ul>
-        </div>
+    <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
+      <span className="text-xl font-bold tracking-wide">Portfolio</span>
+
+      <ul
+        className={`${
+          menu ? "block" : "hidden"
+        }     mx-24 p-y2 mt-4 font-semibold md:mt-5 bg-black px-2 rounded-xl bg-opacity-30 md:border-none text-center md:bg-transparent md:static md:mx-0 md:flex gap-6`}
+      >
+        <a href="#About">
+          <li className="text-md transition-all duration-300 p-1 md:p-0">
+            About
+          </li>
+        </a>
+        <a href="#Experience">
+          <li className="text-md transition-all duration-300 p-1 md:p-0">
+            Experience
+          </li>
+        </a>
+        <a href="#Projects">
+          <li className="text-md transition-all duration-300 p-1 md:p-0">
+            Projects
+          </li>
+        </a>
+        <a href="#Footer">
+          <li className="text-md transition-all duration-300 p-1 md:p-0">
+            Contact
+          </li>
+        </a>
+      </ul>
+      {showMenu ? (
+        <RiMenu2Line
+          size={30}
+          className="md:hidden absolute right-10 top-6 transition-all duration-300"
+          onClick={() => {
+            openMenu(!menu);
+            setShowmenu(!showMenu);
+          }}
+        />
+      ) : (
+        <RiCloseLine
+          size={30}
+          className="md:hidden absolute right-10 top-6 transition-all duration-300"
+        />
+      )}
     </nav>
   );
 };

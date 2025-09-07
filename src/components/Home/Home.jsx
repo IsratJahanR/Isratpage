@@ -1,13 +1,13 @@
 import React from 'react';
-import backgroundImage from '/assets/background.avif'; // Update with the correct path to the image
-import './Home.css'; // Update with the correct path to the CSS file
+import backgroundImage from '/assets/background.avif'; 
+
 
 const Home = () => {
   return (
-    <section
+    <div
       id="home"
-      className="h-screen flex flex-col items-center justify-center text-center text-gray-800 relative bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className="h-screen flex flex-col items-center justify-center text-center text-gray-800 relative bg-cover bg-center bg-black"
+      
     >
       {/* Overlay for better readability */}
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
@@ -29,10 +29,10 @@ const Home = () => {
 
         {/* Description */}
         <p className="mt-6 text-lg max-w-3xl leading-relaxed opacity-0 animate-fadeInUp delay-400">
-          🚀 I am a dedicated and enthusiastic CSE student at
-          <span className="font-bold text-green-500">GSTU</span>,
+          🚀 I am a dedicated and enthusiastic CSE student at 
+          <span className="font-bold text-green-500"> GSTU</span>,
           with a strong foundation in
-          <span className="text-green-600 font-semibold">Data Structures & Algorithms</span>.
+          <span className="text-green-600 font-semibold"> Data Structures & Algorithms</span>.
           I have a keen interest in
           <span className="font-semibold text-green-700">Python, Backend Development, Django, and ML/AI</span>,
           continuously refining my skills in solving complex problems and building scalable applications.
@@ -48,7 +48,7 @@ const Home = () => {
       >
         🚀 Let's Connect!
       </a>
-    </section>
+    </div>
   );
 };
 
