@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="bg-black width-full h-screen">
       <Navbar />
+      <Home />
       {/* <Hero />
       <About />
       <Experience />
